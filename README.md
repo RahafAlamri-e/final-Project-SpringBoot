@@ -118,44 +118,18 @@ The store uploads its sales data → AI analyzes the data and generates a market
 ---
 
 
-### 🔵 رهف العمري — *المتاجر والفروع والعملاء والاشتراكات والتقارير* (72 endpoint)
-النطاق: `StoreOwner`, `Store`, `Branch`, `Customer`, `Subscription`, `Payment`, `MonthlyReport`
+### 🔵 رهف العمري — *المتاجر والفروع والعملاء والاشتراكات والتقارير* (53)
+النطاق: `Branch`, `Customer`, `Subscription`, `Store`, `StoreOwner`, `Payment`, `MonthlyReport`
 
 <details open>
-<summary><b>Branch</b> · <code>/api/v1/branch</code> (14)</summary>
+<summary><b>Customer</b> · <code>/api/v1/customer</code></summary>
 
 | Method | Path |
 |--------|------|
-| POST | `/add/{storeId}` |
-| GET | `/get` |
-| GET | `/get/{branchId}` |
-| GET | `/store/{storeId}` |
-| PUT | `/update/{branchId}` |
-| PUT | `/activate/{branchId}` |
-| PUT | `/deactivate/{branchId}` |
-| DELETE | `/delete/{branchId}` |
-| GET | `/subscribed/{branchId}` |
-| GET | `/recommended-radius/{branchId}` |
-| PUT | `/apply-recommended-radius/{branchId}` |
-| GET | `/{branchId}/dashboard` |
-| GET | `/{branchId}/customers-in-radius/count` |
-| GET | `/{branchId}/campaign-radius-info` |
-</details>
-
-<details>
-<summary><b>Customer</b> · <code>/api/v1/customer</code> (20)</summary>
-
-| Method | Path |
-|--------|------|
-| POST | `/register` |
-| GET | `/get` |
-| GET | `/get/{customerId}` |
 | GET | `/location-consent` |
 | GET | `/get-by-phone` |
 | GET | `/inside-radius/{branchId}` |
 | GET | `/my` |
-| PUT | `/update` |
-| DELETE | `/delete` |
 | GET | `/my/campaigns/in-radius` |
 | GET | `/my/campaigns/active` |
 | GET | `/my/campaigns/expired` |
@@ -170,13 +144,27 @@ The store uploads its sales data → AI analyzes the data and generates a market
 </details>
 
 <details>
-<summary><b>Subscription</b> · <code>/api/v1/subscription</code> (12)</summary>
+<summary><b>Branch</b> · <code>/api/v1/branch</code></summary>
+
+| Method | Path |
+|--------|------|
+| GET | `/store/{storeId}` |
+| PUT | `/activate/{branchId}` |
+| PUT | `/deactivate/{branchId}` |
+| GET | `/subscribed/{branchId}` |
+| GET | `/recommended-radius/{branchId}` |
+| PUT | `/apply-recommended-radius/{branchId}` |
+| GET | `/{branchId}/dashboard` |
+| GET | `/{branchId}/customers-in-radius/count` |
+| GET | `/{branchId}/campaign-radius-info` |
+</details>
+
+<details>
+<summary><b>Subscription</b> · <code>/api/v1/subscription</code></summary>
 
 | Method | Path |
 |--------|------|
 | GET | `/plans` |
-| GET | `/get` |
-| GET | `/get/{subscriptionId}` |
 | GET | `/my` |
 | GET | `/my/active` |
 | GET | `/my/status` |
@@ -189,35 +177,30 @@ The store uploads its sales data → AI analyzes the data and generates a market
 </details>
 
 <details>
-<summary><b>Store</b> · <code>/api/v1/store</code> (8)</summary>
+<summary><b>MonthlyReport</b> · <code>/api/v1/monthly-report</code></summary>
 
 | Method | Path |
 |--------|------|
-| POST | `/add` |
-| GET | `/get` |
-| GET | `/get/{storeId}` |
+| POST | `/generate/{branchId}` |
+| PUT | `/regenerate/{reportId}` |
+| GET | `/branch/{branchId}` |
+| GET | `/branch/{branchId}/date` |
+| GET | `/download/{reportId}` (PDF) |
+| POST | `/send-email/{reportId}` |
+</details>
+
+<details>
+<summary><b>Store</b> · <code>/api/v1/store</code></summary>
+
+| Method | Path |
+|--------|------|
 | GET | `/my-stores` |
-| PUT | `/update/{storeId}` |
 | PUT | `/activate/{storeId}` |
 | PUT | `/deactivate/{storeId}` |
-| DELETE | `/delete/{storeId}` |
 </details>
 
 <details>
-<summary><b>StoreOwner</b> · <code>/api/v1/store-owner</code> (6)</summary>
-
-| Method | Path |
-|--------|------|
-| POST | `/register` |
-| GET | `/get` |
-| GET | `/get/{storeOwnerId}` |
-| GET | `/my` |
-| PUT | `/update` |
-| DELETE | `/delete` |
-</details>
-
-<details>
-<summary><b>Payment</b> · <code>/api/v1/payment</code> (3)</summary>
+<summary><b>Payment</b> · <code>/api/v1/payment</code></summary>
 
 | Method | Path |
 |--------|------|
@@ -227,19 +210,11 @@ The store uploads its sales data → AI analyzes the data and generates a market
 </details>
 
 <details>
-<summary><b>MonthlyReport</b> · <code>/api/v1/monthly-report</code> (9)</summary>
+<summary><b>StoreOwner</b> · <code>/api/v1/store-owner</code></summary>
 
 | Method | Path |
 |--------|------|
-| POST | `/generate/{branchId}` |
-| PUT | `/regenerate/{reportId}` |
-| GET | `/get` |
-| GET | `/get/{reportId}` |
-| GET | `/branch/{branchId}` |
-| GET | `/branch/{branchId}/date` |
-| DELETE | `/delete/{reportId}` |
-| GET | `/download/{reportId}` (PDF) |
-| POST | `/send-email/{reportId}` |
+| GET | `/my` |
 </details>
 
 ---
