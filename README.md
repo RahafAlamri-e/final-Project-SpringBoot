@@ -242,11 +242,6 @@ The store uploads its sales data → AI analyzes the data and generates a market
 | POST | `/send-email/{reportId}` |
 </details>
 
-```md
-
-```
-
-
 ---
 
 ## 🗂️ مخطط الأصناف (Class Diagram)
